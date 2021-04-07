@@ -1,13 +1,13 @@
-import { ADD_TODO, TOGGLE_TODO } from "../actionTypes";
 
 const initialState = {
     allIds: [],
     byIds: {}
 };
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default function(state = initialState, action) {
     switch (action.type) {
-        case ADD_TODO: {
+        case 'ADD_TODO': {
             const { id, content } = action.payload;
             return {
                 ...state,
@@ -21,7 +21,7 @@ export default function(state = initialState, action) {
                 }
             };
         }
-        case TOGGLE_TODO: {
+        case 'TOGGLE_TODO': {
             const { id } = action.payload;
             return {
                 ...state,
